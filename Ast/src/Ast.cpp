@@ -559,6 +559,7 @@ void AstExprInstantiate::visit(AstVisitor* visitor)
     if (visitor->visit(this))
     {
         visitTypeOrPackArray(visitor, typeArguments);
+        expr->visit(visitor);
     }
 }
 
