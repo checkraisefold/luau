@@ -9,7 +9,7 @@
 #include <math.h>
 
 LUAU_FASTFLAG(LuauAutocompleteAttributes)
-LUAU_FASTFLAG(LuauExplicitTypeExpressionInstantiation)
+LUAU_FASTFLAGVARIABLE(LuauExplicitTypeExpressionInstantiationJsonEncoding)
 
 namespace Luau
 {
@@ -1346,7 +1346,7 @@ struct AstJsonEncoder : public AstVisitor
 
     bool visit(class AstExprInstantiate* node) override
     {
-        LUAU_ASSERT(FFlag::LuauExplicitTypeExpressionInstantiation);
+        LUAU_ASSERT(FFlag::LuauExplicitTypeExpressionInstantiationJsonEncoding);
 
         write(node);
         return false;
